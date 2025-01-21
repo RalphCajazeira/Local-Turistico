@@ -10,19 +10,33 @@
 
 #page {
   margin: 88px 80px 65px;
+}
 
-  & strong {
+.title {
+  strong {
     color: #e1624f;
     text-transform: uppercase;
     font-size: 16px;
     font-weight: bold;
   }
+
+  & + p {
+    margin-top: 8px;
+  }
 }
 
 h1 {
-  font: 700 36px/49px "Open Sans", sans-serif;
+  font: bold 36px "Open Sans", sans-serif;
   color: #1b1b1b;
   margin-top: 8px;
+}
+
+h2 {
+  font: bold 32px "Open Sans", sans-serif;
+}
+
+h3 {
+  font: bold 28px "Open Sans", sans-serif;
 }
 
 #description {
@@ -46,16 +60,90 @@ img {
 .divisor {
   width: 100%;
   border: 1px solid #d9d9d9;
-  margin-top: 40px;
+  margin-block: 40px;
 }
 
 #title-list {
   margin-top: 64px;
+}
 
-  & + p {
-    margin-top: 8px;
+.cards-list {
+  margin-top: 64px;
+
+  & img {
+    margin-top: 48px;
+  }
+
+  & h3 {
+    margin-top: 20px;
+  }
+
+  & p {
+    margin-top: 4px;
   }
 }
 
-h2 {
+& .card-list {
+  & span {
+    font-weight: bold;
+    color: #0c51a7;
+  }
+}
+
+ul {
+  list-style-type: disc;
+  padding-inline: 24px;
+}
+
+.purple {
+  font-weight: bold;
+  color: #591b98;
+}
+
+.pink {
+  font-weight: bold;
+  color: #e5245e;
+}
+
+.orange {
+  font-weight: bold;
+  color: #e95e10;
+}
+
+.blue {
+  font-weight: bold;
+  color: #0c51a7;
+}
+
+.divisor + p {
+  text-align: center;
+}
+
+footer {
+  margin-block: 65px 48px;
+  text-align: center;
+  color: #1b1b1b;
+  font-weight: bold;
+  & img {
+    width: 16px;
+  }
+}
+
+.cards-list {
+  list-style: none; /* Remove a numeração padrão da lista */
+  counter-reset: card-counter; /* Inicializa o contador */
+  padding-left: 0; /* Remove espaçamento padrão */
+}
+
+.card-list {
+  counter-increment: card-counter; /* Incrementa o contador para cada <li> */
+  /* margin-bottom: 20px; Espaçamento entre os cards */
+
+  & h3::before {
+    content: counter(card-counter) ". "; /* Insere o número antes do <h3> */
+    font-weight: bold; /* Destaca a numeração */
+    color: #333; /* Cor da numeração */
+    margin-right: 8px; /* Espaço entre o número e o texto */
+    display: inline-block; /* Garante que o número fique na mesma linha do texto */
+  }
 }
